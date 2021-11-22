@@ -16,13 +16,6 @@ public func Rounding (targetView: UIView) {
         targetView.clipsToBounds = true}
 
 
-//let btnPlayer : AVAudioPlayer
-//let btnURL = Bundle.main.url(forResource: "squish", withExtension: "caf")!
-//btnPlayer = try! AVAudioPlayer(contentsOf: btnURL)
-//btnPlayer.prepareToPlay()
-//btnPlayer.play()
-//super.viewDidLoad()
-
 class ViewController: UIViewController {
 
     var audioPlayer : AVAudioPlayer?
@@ -54,15 +47,25 @@ class ViewController: UIViewController {
     var previousNumber : Double = 0
     var operation = 0
     var calculating = false
+    var count = 0
+//    var doubling = false
+    let formatter = NumberFormatter()
+
     
     @IBAction func NumbersClick(_ sender: UIButton) {
+        let formatter = NumberFormatter()
+   //     let maybeNumber = formatter.numberFromString(label)
+        if (Result.text == "0")
+        {
+            Result.text?.remove(at: Result.text!.startIndex)
+        }
         if calculating == true {
             Result.text = String(sender.tag-1)
-            numberCalculating = Double(Result.text!)!
+            numberCalculating = Result.text!.doubleValue
             calculating = false
         } else {
             Result.text = Result.text! + String(sender.tag-1)
-            numberCalculating = Double(Result.text!)!
+            numberCalculating = Result.text!.doubleValue
         }
     }
     
@@ -80,18 +83,23 @@ class ViewController: UIViewController {
         }
         
         if Result.text != "" && sender.tag != 11 && sender.tag != 19 && sender.tag != 17 && sender.tag != 18 && sender.tag != 16  {
-            previousNumber = Double(Result.text!)!
+            previousNumber = Result.text!.doubleValue
             operation = sender.tag
             calculating = true
         }
         else if sender.tag == 17 {
-            Result.text = String(numberCalculating * -1)
+            numberCalculating = Double(Result.text!)!
+            if (numberCalculating) == Double(Int((numberCalculating))) {
+                Result.text = String(Int((numberCalculating * -1)))
+           } else {
+                    Result.text = String(numberCalculating * -1).replacingOccurrences(of: ".", with: ",")
+            }
         }
         else if sender.tag == 18 {
-            Result.text = String(numberCalculating * 0.01)
+            Result.text = String(numberCalculating * 0.01).replacingOccurrences(of: ".", with: ",")
         }
         else if sender.tag == 19 {
-            Result.text = String(Int(numberCalculating)) + "."
+            Result.text = String(Int(numberCalculating)) + ","
         }
          else if sender.tag == 16 {
              
@@ -102,42 +110,46 @@ class ViewController: UIViewController {
                  audioPlayer?.play()
              }
              catch {
-                 
-             }
+                 }
               
              if operation == 12 {
-//                 if numberCalculating == 0 {
-//                     Result.text = "Error"
-//                 } else {
-                 Result.text = String(previousNumber / numberCalculating)
-                 
+                 if (previousNumber / numberCalculating) == Double(Int((previousNumber / numberCalculating))) {
+                     Result.text = String(Int((previousNumber / numberCalculating)))
+                } else {
+                         Result.text = String(previousNumber / numberCalculating).replacingOccurrences(of: ".", with: ",")
                  }
+             }
              else if operation == 13 {
-                 Result.text = String(previousNumber * numberCalculating)
+                 if (previousNumber * numberCalculating) == Double(Int((previousNumber * numberCalculating))) {
+                     Result.text = String(Int((previousNumber * numberCalculating)))
+                } else {
+                         Result.text = String(previousNumber * numberCalculating).replacingOccurrences(of: ".", with: ",")
+                 }
              }
              else if operation == 14 {
-                 Result.text = String(previousNumber - numberCalculating)
+                 if (previousNumber - numberCalculating) == Double(Int((previousNumber - numberCalculating))) {
+                     Result.text = String(Int((previousNumber - numberCalculating)))
+                } else {
+                         Result.text = String(previousNumber - numberCalculating).replacingOccurrences(of: ".", with: ",")
+                 }
              }
              else if operation == 15 {
-                 Result.text = String(previousNumber + numberCalculating)
-             }
-             else if sender.tag == 17 {
-                 Result.text = String(previousNumber * -1)
+                 if (previousNumber + numberCalculating) == Double(Int((previousNumber + numberCalculating))) {
+                     Result.text = String(Int((previousNumber + numberCalculating)))
+                } else {
+                         Result.text = String(previousNumber + numberCalculating).replacingOccurrences(of: ".", with: ",")
+                 }
              }
         }
         
         else if sender.tag == 11 {
-            Result.text = ""
+            Result.text = "0"
             numberCalculating = 0
             previousNumber = 0
             operation = 0
         }
         
     }
-    
-    
-    
-    
     
     override func viewDidLoad() {
         Rounding(targetView: Btn0)
@@ -160,10 +172,21 @@ class ViewController: UIViewController {
         Rounding(targetView: negativeBtn)
         Rounding(targetView: acBtn)
         
-        
-
     }
-
-
 }
 
+extension String {
+    var doubleValue:Double {
+        let nf = NumberFormatter()
+        nf.decimalSeparator = "."
+        if let result = nf.number(from: self) {
+            return result.doubleValue
+        } else {
+            nf.decimalSeparator = ","
+            if let result = nf.number(from: self) {
+                return result.doubleValue
+            }
+        }
+        return 0
+    }
+}
