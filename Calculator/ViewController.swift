@@ -7,20 +7,28 @@
 
 import UIKit
 import AVFoundation
+import Dispatch
 
-public func Rounding (targetView: UIView) {
-        targetView.layer.borderWidth = 0
-        targetView.layer.masksToBounds = false
-        targetView.layer.borderColor = UIColor.clear.cgColor
-        targetView.layer.cornerRadius = 45
-        targetView.clipsToBounds = true}
-
+//                      ????????????????????????
+//DispatchQueue.global(qos: .userInitiated).async {
+//    let pathToSound = Bundle.main.path(forResource: "resultSound", ofType: "mp3") ?? ""
+//    let url = URL(fileURLWithPath: pathToSound)
+//
+//    DispatchQueue.main.async {
+//        do {
+//            audioPlayer = try AVAudioPlayer(contentsOf: url)
+//            audioPlayer?.play()
+//        }
+//        catch {
+//
+//        }
+//    }
+//}
 
 class ViewController: UIViewController {
 
-    var audioPlayer : AVAudioPlayer?
-
-    
+//    var audioPlayer : AVAudioPlayer?
+        
     @IBOutlet weak var Result: UILabel!
     @IBOutlet weak var Btn9: UIButton!
     @IBOutlet weak var Btn8: UIButton!
@@ -48,13 +56,11 @@ class ViewController: UIViewController {
     var operation = 0
     var calculating = false
     var count = 0
-//    var doubling = false
     let formatter = NumberFormatter()
 
     
     @IBAction func NumbersClick(_ sender: UIButton) {
-        let formatter = NumberFormatter()
-   //     let maybeNumber = formatter.numberFromString(label)
+       
         if (Result.text == "0")
         {
             Result.text?.remove(at: Result.text!.startIndex)
@@ -72,15 +78,15 @@ class ViewController: UIViewController {
     
     @IBAction func CalculatingButtons(_ sender: UIButton) {
         
-        let pathToSound = Bundle.main.path(forResource: "resultSound", ofType: "mp3") ?? ""
-        let url = URL(fileURLWithPath: pathToSound)
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-        }
-        catch {
-            
-        }
+//        let pathToSound = Bundle.main.path(forResource: "resultSound", ofType: "mp3") ?? ""
+//        let url = URL(fileURLWithPath: pathToSound)
+//        do {
+//            audioPlayer = try AVAudioPlayer(contentsOf: url)
+//            audioPlayer?.play()
+//        }
+//        catch {
+//
+//        }
         
         if Result.text != "" && sender.tag != 11 && sender.tag != 19 && sender.tag != 17 && sender.tag != 18 && sender.tag != 16  {
             previousNumber = Result.text!.doubleValue
@@ -103,14 +109,14 @@ class ViewController: UIViewController {
         }
          else if sender.tag == 16 {
              
-             let pathToSound = Bundle.main.path(forResource: "calculationSound", ofType: "mp3") ?? ""
-             let url = URL(fileURLWithPath: pathToSound)
-             do {
-                 audioPlayer = try AVAudioPlayer(contentsOf: url)
-                 audioPlayer?.play()
-             }
-             catch {
-                 }
+//             let pathToSound = Bundle.main.path(forResource: "calculationSound", ofType: "mp3") ?? ""
+//             let url = URL(fileURLWithPath: pathToSound)
+//             do {
+//                 audioPlayer = try AVAudioPlayer(contentsOf: url)
+//                 audioPlayer?.play()
+//             }
+//             catch {
+//                 }
               
              if operation == 12 {
                  if (previousNumber / numberCalculating) == Double(Int((previousNumber / numberCalculating))) {
@@ -152,25 +158,6 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        Rounding(targetView: Btn0)
-        Rounding(targetView: Btn1)
-        Rounding(targetView: Btn2)
-        Rounding(targetView: Btn3)
-        Rounding(targetView: Btn4)
-        Rounding(targetView: Btn5)
-        Rounding(targetView: Btn6)
-        Rounding(targetView: Btn7)
-        Rounding(targetView: Btn8)
-        Rounding(targetView: Btn9)
-        Rounding(targetView: commaBtn)
-        Rounding(targetView: resultBtn)
-        Rounding(targetView: plusBtn)
-        Rounding(targetView: minusBtn)
-        Rounding(targetView: multiplicationBtn)
-        Rounding(targetView: divideBtn)
-        Rounding(targetView: percentBtn)
-        Rounding(targetView: negativeBtn)
-        Rounding(targetView: acBtn)
         
     }
 }
@@ -189,4 +176,27 @@ extension String {
         }
         return 0
     }
+}
+
+
+@IBDesignable extension UIButton {
+
+    @IBInspectable var borderWidth: CGFloat {
+        set {
+            layer.borderWidth = newValue
+        }
+        get {
+            return layer.borderWidth
+        }
+    }
+
+    @IBInspectable var cornerRadius: CGFloat {
+        set {
+            layer.cornerRadius = newValue
+        }
+        get {
+            return layer.cornerRadius
+        }
+    }
+    
 }
