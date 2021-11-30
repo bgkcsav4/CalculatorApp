@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,417 +14,276 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mls-GB-GBd">
+                                <rect key="frame" x="12" y="245.66666666666663" width="354" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Lkr-G9-22L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oOY-pH-t7T">
-                                <rect key="frame" x="0.0" y="359.66666666666669" width="428" height="532.33333333333326"/>
+                                <rect key="frame" x="12" y="345.66666666666674" width="366" height="452.33333333333326"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YXw-sJ-fQO">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="98.666666666666671"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YXw-sJ-fQO">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="82.333333333333329"/>
                                         <subviews>
-                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3t-xY-Cr1">
-                                                <rect key="frame" x="0.0" y="0.0" width="98" height="98.666666666666671"/>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3t-xY-Cr1" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.333333333333329"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="AC">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3qf-NK-KBO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8o7-8P-sJ0">
-                                                <rect key="frame" x="110" y="0.0" width="98" height="98.666666666666671"/>
+                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8o7-8P-sJ0" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="82.333333333333314" height="82.333333333333329"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="+/-">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="plus.forwardslash.minus" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" weight="bold"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wcl-qD-SeK"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7n-Yh-3j3">
-                                                <rect key="frame" x="220" y="0.0" width="98" height="98.666666666666671"/>
+                                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7n-Yh-3j3" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="189" y="0.0" width="82.666666666666686" height="82.333333333333329"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="%">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="percent" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" weight="bold"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hzS-XB-oxw"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qso-5B-MlL">
-                                                <rect key="frame" x="330" y="0.0" width="98" height="98.666666666666671"/>
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qso-5B-MlL" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="82.333333333333314" height="82.333333333333329"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title=" ">
                                                     <imageReference key="image" image="divide" catalog="system" symbolScale="large" renderingMode="template"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    </preferredSymbolConfiguration>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" weight="bold"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsK-IE-ITh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="e3t-xY-Cr1" firstAttribute="width" secondItem="YXw-sJ-fQO" secondAttribute="height" id="Sbt-yT-wOZ"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ypz-Z6-Ya1">
-                                        <rect key="frame" x="0.0" y="108.66666666666663" width="428" height="98.333333333333314"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ypz-Z6-Ya1">
+                                        <rect key="frame" x="0.0" y="92.333333333333314" width="366" height="82.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-HF-Jns">
-                                                <rect key="frame" x="0.0" y="0.0" width="98" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-HF-Jns" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="7">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekH-cT-2xc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNn-Oz-WuV">
-                                                <rect key="frame" x="110" y="0.0" width="98" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNn-Oz-WuV" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="82.333333333333314" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="8">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IqW-eC-Ayb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi0-MT-qYC">
-                                                <rect key="frame" x="220" y="0.0" width="98" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi0-MT-qYC" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="189" y="0.0" width="82.666666666666686" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="9">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9k1-vR-Dnc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKf-kM-Iiv">
-                                                <rect key="frame" x="330" y="0.0" width="98" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKf-kM-Iiv" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="82.333333333333314" height="82.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="X">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="multiply" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" weight="bold"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cys-1T-VFf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uzG-fs-aej">
-                                        <rect key="frame" x="0.0" y="216.99999999999997" width="428" height="98.333333333333343"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uzG-fs-aej">
+                                        <rect key="frame" x="0.0" y="184.99999999999994" width="366" height="82.333333333333314"/>
                                         <subviews>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpX-5G-fxv">
-                                                <rect key="frame" x="0.0" y="0.0" width="98" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpX-5G-fxv" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.333333333333329"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="4">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HqQ-Bu-uv4"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-PZ-JIb">
-                                                <rect key="frame" x="110" y="0.0" width="98" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-PZ-JIb" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="82.333333333333314" height="82.333333333333329"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="5">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v9w-8a-lQH"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZS-BN-Xca">
-                                                <rect key="frame" x="220" y="0.0" width="98" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZS-BN-Xca" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="189" y="0.0" width="82.666666666666686" height="82.333333333333329"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="6">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tBj-hN-8gx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMa-7E-wz9">
-                                                <rect key="frame" x="330" y="0.0" width="98" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMa-7E-wz9" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="82.333333333333314" height="82.333333333333329"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="-">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" weight="bold"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NEo-pS-dbk"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WeO-cf-Abe">
-                                        <rect key="frame" x="0.0" y="325.33333333333331" width="428" height="98.666666666666686"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WeO-cf-Abe">
+                                        <rect key="frame" x="0.0" y="277.33333333333331" width="366" height="82.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96f-de-Cdf">
-                                                <rect key="frame" x="0.0" y="0.0" width="98" height="98.666666666666671"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96f-de-Cdf" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="1">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CEP-X2-cDY"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiV-2A-ihP">
-                                                <rect key="frame" x="110" y="0.0" width="98" height="98.666666666666671"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiV-2A-ihP" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="82.333333333333314" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="2">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JaF-Qu-fsp"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgr-Se-Zwd">
-                                                <rect key="frame" x="220" y="0.0" width="98" height="98.666666666666671"/>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgr-Se-Zwd" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="189" y="0.0" width="82.666666666666686" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="3">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ezb-zM-80X"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0G-SW-CVj">
-                                                <rect key="frame" x="330" y="0.0" width="98" height="98.666666666666671"/>
+                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0G-SW-CVj" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="82.333333333333314" height="82.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="+">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" weight="bold"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Xe-VT-UEw"/>
+                                                    <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Af7-QD-2sz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="czu-Sz-Yrr">
-                                        <rect key="frame" x="0.0" y="433.99999999999994" width="428" height="98.333333333333314"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="czu-Sz-Yrr">
+                                        <rect key="frame" x="0.0" y="369.99999999999994" width="366" height="82.333333333333314"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xye-gI-3np">
-                                                <rect key="frame" x="0.0" y="0.0" width="208" height="98.333333333333329"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xye-gI-3np" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="82.333333333333329"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="0">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                                 </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NumbersClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wz8-F4-joR"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CZB-yc-ayv">
-                                                <rect key="frame" x="220" y="0.0" width="208" height="98.333333333333329"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CZB-yc-ayv">
+                                                <rect key="frame" x="189" y="0.0" width="177" height="82.333333333333329"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cI4-I7-uYB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="99" height="98.333333333333329"/>
+                                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cI4-I7-uYB" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="82.333333333333329"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title=",">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                                         </buttonConfiguration>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="45"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oe0-aQ-0uH"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRM-ID-gCQ">
-                                                        <rect key="frame" x="109" y="0.0" width="99" height="98.333333333333329"/>
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRM-ID-gCQ" customClass="calcButton" customModule="Calculator" customModuleProvider="target">
+                                                        <rect key="frame" x="93.666666666666686" y="0.0" width="83.333333333333314" height="82.333333333333329"/>
                                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="=">
-                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="equal" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" weight="bold"/>
                                                         </buttonConfiguration>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="45"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="CalculatingButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQc-9A-cKc"/>
                                                         </connections>
@@ -435,48 +294,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mls-GB-GBd">
-                                <rect key="frame" x="20.666666666666657" y="247.33333333333337" width="386.66666666666674" height="67"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mls-GB-GBd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0725446" id="17c-Hh-stP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oOY-pH-t7T" secondAttribute="trailing" id="4cC-Gc-o0Q"/>
-                            <constraint firstItem="mls-GB-GBd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.6" id="EZk-n7-TCJ"/>
-                            <constraint firstItem="mls-GB-GBd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="I8A-XY-Xmn"/>
-                            <constraint firstItem="mls-GB-GBd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="Mis-FT-sPG"/>
-                            <constraint firstItem="oOY-pH-t7T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b9S-Oe-dxx"/>
-                            <constraint firstItem="oOY-pH-t7T" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.574777" id="nb4-98-S9c"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oOY-pH-t7T" secondAttribute="bottom" id="yR8-5C-hWO"/>
+                            <constraint firstItem="oOY-pH-t7T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="3xB-O0-HxP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mls-GB-GBd" secondAttribute="trailing" constant="24" id="N2y-oq-zmr"/>
+                            <constraint firstItem="oOY-pH-t7T" firstAttribute="top" secondItem="mls-GB-GBd" secondAttribute="bottom" id="RzM-JI-lCJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oOY-pH-t7T" secondAttribute="bottom" constant="12" id="eWA-yB-FVC"/>
+                            <constraint firstItem="mls-GB-GBd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="kQZ-yq-T0d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oOY-pH-t7T" secondAttribute="trailing" constant="12" id="s1F-zr-aqf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Btn0" destination="xye-gI-3np" id="UcA-kY-FJ5"/>
-                        <outlet property="Btn1" destination="96f-de-Cdf" id="if7-Xd-8pA"/>
-                        <outlet property="Btn2" destination="PiV-2A-ihP" id="SJ9-zz-dfo"/>
-                        <outlet property="Btn3" destination="bgr-Se-Zwd" id="p1W-vY-Xjw"/>
-                        <outlet property="Btn4" destination="kpX-5G-fxv" id="hZC-aX-7gd"/>
-                        <outlet property="Btn5" destination="zEq-PZ-JIb" id="Z1k-WF-vLh"/>
-                        <outlet property="Btn6" destination="zZS-BN-Xca" id="ngS-ZM-50e"/>
-                        <outlet property="Btn7" destination="Lb5-HF-Jns" id="BRU-Am-8Fp"/>
-                        <outlet property="Btn8" destination="GNn-Oz-WuV" id="Hvg-rd-Ery"/>
-                        <outlet property="Btn9" destination="wi0-MT-qYC" id="ced-eJ-0h6"/>
+                        <outlet property="ACbutton" destination="e3t-xY-Cr1" id="kXG-CM-Mxk"/>
                         <outlet property="Result" destination="mls-GB-GBd" id="I4I-JI-pYu"/>
-                        <outlet property="acBtn" destination="e3t-xY-Cr1" id="XIW-0Z-CLz"/>
-                        <outlet property="commaBtn" destination="cI4-I7-uYB" id="RVt-SX-Mbh"/>
-                        <outlet property="divideBtn" destination="qso-5B-MlL" id="qPt-jm-cMl"/>
-                        <outlet property="minusBtn" destination="XMa-7E-wz9" id="Fhn-L2-Yyx"/>
-                        <outlet property="multiplicationBtn" destination="gKf-kM-Iiv" id="30k-MC-iUN"/>
-                        <outlet property="negativeBtn" destination="8o7-8P-sJ0" id="yTy-zv-Ug3"/>
-                        <outlet property="percentBtn" destination="r7n-Yh-3j3" id="GGA-9o-tmr"/>
-                        <outlet property="plusBtn" destination="R0G-SW-CVj" id="cyC-1E-Ia3"/>
-                        <outlet property="resultBtn" destination="NRM-ID-gCQ" id="6zJ-fX-waY"/>
+                        <outlet property="divisionButton" destination="qso-5B-MlL" id="dok-uO-Glz"/>
+                        <outlet property="minusButton" destination="XMa-7E-wz9" id="Lxh-Mc-RxD"/>
+                        <outlet property="multiplyButton" destination="gKf-kM-Iiv" id="ArY-H1-fu4"/>
+                        <outlet property="plusButton" destination="R0G-SW-CVj" id="jyO-FL-MNq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -484,8 +320,73 @@
             <point key="canvasLocation" x="18.840579710144929" y="68.973214285714278"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="8o7-8P-sJ0">
+            <size key="intrinsicContentSize" width="64.666666666666671" height="43.666666666666664"/>
+        </designable>
+        <designable name="96f-de-Cdf">
+            <size key="intrinsicContentSize" width="40" height="56"/>
+        </designable>
+        <designable name="GNn-Oz-WuV">
+            <size key="intrinsicContentSize" width="45.666666666666664" height="56"/>
+        </designable>
+        <designable name="Lb5-HF-Jns">
+            <size key="intrinsicContentSize" width="43.666666666666664" height="56"/>
+        </designable>
+        <designable name="NRM-ID-gCQ">
+            <size key="intrinsicContentSize" width="57.333333333333336" height="43.666666666666664"/>
+        </designable>
+        <designable name="PiV-2A-ihP">
+            <size key="intrinsicContentSize" width="44.333333333333336" height="56"/>
+        </designable>
+        <designable name="R0G-SW-CVj">
+            <size key="intrinsicContentSize" width="61" height="43.666666666666664"/>
+        </designable>
+        <designable name="XMa-7E-wz9">
+            <size key="intrinsicContentSize" width="60.666666666666664" height="43.666666666666664"/>
+        </designable>
+        <designable name="bgr-Se-Zwd">
+            <size key="intrinsicContentSize" width="45.333333333333336" height="56"/>
+        </designable>
+        <designable name="cI4-I7-uYB">
+            <size key="intrinsicContentSize" width="30.666666666666668" height="44"/>
+        </designable>
+        <designable name="e3t-xY-Cr1">
+            <size key="intrinsicContentSize" width="64" height="50"/>
+        </designable>
+        <designable name="gKf-kM-Iiv">
+            <size key="intrinsicContentSize" width="56.333333333333336" height="43.666666666666664"/>
+        </designable>
+        <designable name="kpX-5G-fxv">
+            <size key="intrinsicContentSize" width="45.666666666666664" height="56"/>
+        </designable>
+        <designable name="qso-5B-MlL">
+            <size key="intrinsicContentSize" width="64.666666666666671" height="43.666666666666664"/>
+        </designable>
+        <designable name="r7n-Yh-3j3">
+            <size key="intrinsicContentSize" width="66.333333333333329" height="43.666666666666664"/>
+        </designable>
+        <designable name="wi0-MT-qYC">
+            <size key="intrinsicContentSize" width="46" height="56"/>
+        </designable>
+        <designable name="xye-gI-3np">
+            <size key="intrinsicContentSize" width="45.666666666666664" height="56"/>
+        </designable>
+        <designable name="zEq-PZ-JIb">
+            <size key="intrinsicContentSize" width="45" height="56"/>
+        </designable>
+        <designable name="zZS-BN-Xca">
+            <size key="intrinsicContentSize" width="46" height="56"/>
+        </designable>
+    </designables>
     <resources>
         <image name="divide" catalog="system" width="128" height="103"/>
+        <image name="equal" catalog="system" width="128" height="72"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="percent" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.forwardslash.minus" catalog="system" width="128" height="115"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
